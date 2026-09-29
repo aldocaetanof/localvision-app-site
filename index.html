@@ -41,7 +41,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/site.css?v=20260928b" />
+  <link rel="stylesheet" href="assets/site.css?v=20260929" />
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Do I need a GPU or fast internet?", "acceptedAnswer": {"@type": "Answer", "text": "No. Detection runs on the CPU. Performance depends on your computer, resolution and number of cameras. Internet is needed only for integrations you enable, the subscription and remote access."}}, {"@type": "Question", "name": "Do my images go to external services?", "acceptedAnswer": {"@type": "Answer", "text": "Continuous video, recordings and the face database stay on your machine. If you enable Telegram, alert photos are sent to it."}}, {"@type": "Question", "name": "Will it work with my current cameras?", "acceptedAnswer": {"@type": "Answer", "text": "If they speak RTSP (most IP cameras, including Hikvision, Dahua, Reolink, Amcrest and TP-Link Tapo) or are USB webcams, yes."}}, {"@type": "Question", "name": "Do I pay per camera?", "acceptedAnswer": {"@type": "Answer", "text": "No. The subscription is US$ 29/month per installation, with as many cameras as your computer can handle."}}, {"@type": "Question", "name": "Who processes my payment?", "acceptedAnswer": {"@type": "Answer", "text": "Our order process is conducted by our online reseller Paddle.com. Paddle.com is the Merchant of Record for all our orders and handles billing, taxes, invoices and payment support."}}, {"@type": "Question", "name": "Can I cancel or get a refund?", "acceptedAnswer": {"@type": "Answer", "text": "You can cancel anytime; access continues until the end of the paid period. See the refund policy."}}, {"@type": "Question", "name": "Windows blocked the installer (SmartScreen)?", "acceptedAnswer": {"@type": "Answer", "text": "The installer isn't code-signed yet. On the SmartScreen screen, click “More info” and then “Run anyway”. You can verify the file's SHA256 from the download email."}}]}</script>
   <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "2425f0a6b76047ed88d276895d621326"}'></script>
 </head>
@@ -90,42 +90,114 @@
           <li>Works with the <strong>RTSP cameras and webcams</strong> you already have</li>
         </ul>
       </div>
-      <div class="hero-card app-window" role="img" aria-label="Local Vision window with four live cameras analyzed by AI">
+      <div class="hero-card app-window" role="img" aria-label="Local Vision window with live monitoring and real-time AI">
+        <!-- Local Vision Windows title bar -->
         <div class="app-titlebar">
           <div class="app-title-brand">
             <img class="app-title-icon" src="assets/logo-owl-refined.png?v=20260927-lens" width="16" height="16" alt="" />
             <span>Local Vision</span>
           </div>
-          <div class="app-title-status"><span class="app-status-dot" aria-hidden="true"></span><span>Local AI · CPU</span></div>
-          <div class="app-win-controls" aria-hidden="true"><span class="app-win-btn">—</span><span class="app-win-btn">□</span><span class="app-win-btn app-win-close">✕</span></div>
+          <div class="app-title-status">
+            <span class="app-status-dot" aria-hidden="true"></span>
+            <span>Local AI · CPU</span>
+          </div>
+          <div class="app-win-controls" aria-hidden="true">
+            <span class="app-win-btn">—</span>
+            <span class="app-win-btn">□</span>
+            <span class="app-win-btn app-win-close">✕</span>
+          </div>
         </div>
+
+        <!-- App layout (sidebar + main stage) -->
         <div class="app-body">
+          <aside class="app-sidebar" aria-label="App navigation">
+            <div class="app-nav-item active" title="Live view">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3" /><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z" /></svg>
+              <span>Live</span>
+            </div>
+            <div class="app-nav-item" title="Settings and zones">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6 12 3l9 3v12l-9 3-9-3Z" /><path d="M12 3v18" /><path d="M3 6l9 3 9-3" /></svg>
+              <span>Zones</span>
+            </div>
+            <div class="app-nav-item" title="Registered faces gallery">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4" /><path d="M4 21c0-4 4-7 8-7s8 3 8 7" /></svg>
+              <span>Faces</span>
+            </div>
+            <div class="app-nav-item has-badge" title="Event history">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 3-6.7L3 8" /><path d="M3 3v5h5" /><path d="M12 7v5l3 2" /></svg>
+              <span>History</span>
+              <em class="app-nav-badge">1</em>
+            </div>
+            <div class="app-sidebar-user">
+              <span class="app-user-avatar">AD</span>
+              <span class="app-user-role">admin</span>
+            </div>
+          </aside>
+
           <div class="app-stage">
             <div class="app-stage-bar">
               <span class="stage-chip rec"><span class="stage-dot" aria-hidden="true"></span>REC · 00:14:22</span>
               <span class="stage-chip">4 cameras</span>
+              <span class="stage-chip stage-chip-active">● GATE</span>
               <span class="stage-chip crit"><span class="stage-dot-crit" aria-hidden="true"></span>1 alert</span>
             </div>
-            <div class="mock-grid">
-              <div class="mock-cam active-cam cam-crit">
-                <span class="mock-cam-tag tag-crit"><span class="tag-crit-dot" aria-hidden="true"></span>ALERT</span>
-                <video class="mock-cam-video" autoplay loop muted playsinline preload="auto" src="assets/videos/pessoa_mascarada_processada.webm"></video>
+
+            <div class="mock-grid" id="mockGrid">
+              <div class="mock-cam active-cam cam-crit" data-cam-id="1" title="Camera 1: Gate — Unknown person hiding their face">
+                <span class="mock-cam-tag tag-crit"><span class="tag-crit-dot" aria-hidden="true"></span>DANGER</span>
+                <video class="mock-cam-video" autoplay loop muted playsinline preload="auto" src="assets/videos/pessoa_mascarada_processada.webm?v=en1"></video>
                 <span class="mock-cam-badge"><span class="mock-cam-badge-dot" style="background:#ef4444"></span>CAM 01 · Gate</span>
               </div>
-              <div class="mock-cam">
-                <video class="mock-cam-video" autoplay loop muted playsinline preload="auto" src="assets/videos/ocr_placa_processada.webm"></video>
+              <div class="mock-cam" data-cam-id="2" title="Camera 2: Driveway — Automatic plate reading">
+                <video class="mock-cam-video" autoplay loop muted playsinline preload="auto" src="assets/videos/ocr_placa_processada.webm?v=en1"></video>
                 <span class="mock-cam-badge"><span class="mock-cam-badge-dot"></span>CAM 02 · Driveway</span>
               </div>
-              <div class="mock-cam">
-                <video class="mock-cam-video" autoplay loop muted playsinline preload="auto" src="assets/videos/portao.mp4"></video>
+              <div class="mock-cam" data-cam-id="3" title="Camera 3: Hallway — Local face recognition">
+                <video class="mock-cam-video" autoplay loop muted playsinline preload="auto" src="assets/videos/portao.mp4?v=en1"></video>
                 <span class="mock-cam-badge"><span class="mock-cam-badge-dot"></span>CAM 03 · Hallway</span>
               </div>
-              <div class="mock-cam">
+              <div class="mock-cam" data-cam-id="4" title="Camera 4: Kitchen — Pet detection and trash zone intrusion">
                 <span class="mock-cam-tag tag-warn">TRASH ZONE</span>
-                <video class="mock-cam-video" autoplay loop muted playsinline preload="auto" src="assets/videos/porta_fundos.mp4"></video>
+                <video class="mock-cam-video" autoplay loop muted playsinline preload="auto" src="assets/videos/porta_fundos.mp4?v=en1"></video>
                 <span class="mock-cam-badge"><span class="mock-cam-badge-dot" style="background:#f59e0b"></span>CAM 04 · Kitchen</span>
               </div>
             </div>
+
+            <!-- Real-time Watch Agent panel -->
+            <div class="agent-panel" id="agentPanel" aria-live="polite">
+              <div class="agent-panel-header">
+                <div class="agent-brand">
+                  <span class="agent-radar" aria-hidden="true"></span>
+                  <span class="agent-title">Watch Agent</span>
+                  <span class="agent-tag-vlm" id="agentProviderTag">Watch Agent · CPU</span>
+                </div>
+                <div class="agent-cam-selector" role="tablist" aria-label="Feed selection for analysis">
+                  <button type="button" class="agent-cam-tab active" data-cam="1">CAM 01</button>
+                  <button type="button" class="agent-cam-tab" data-cam="2">CAM 02</button>
+                  <button type="button" class="agent-cam-tab" data-cam="3">CAM 03</button>
+                  <button type="button" class="agent-cam-tab" data-cam="4">CAM 04</button>
+                </div>
+              </div>
+
+              <div class="agent-narration agent-state-warn" id="agentState">
+                <span class="agent-verdict" id="agentVerdict">ATTENTION NEEDED</span>
+                <p class="agent-text" id="agentText">Person with a hidden face approaching the perimeter.</p>
+              </div>
+
+              <div class="agent-meta-grid">
+                <div class="agent-meta-item">
+                  <strong>Signal:</strong> <span id="agentMetaDetect">Hidden face + approach</span>
+                </div>
+                <div class="agent-meta-item">
+                  <strong>Confidence:</strong> <span id="agentMetaZone">82%</span>
+                </div>
+                <div class="agent-meta-item">
+                  <strong>Processing:</strong> <span id="agentMetaAction">Local · 43 ms · private image</span>
+                </div>
+              </div>
+              <span class="agent-hint">Click a camera to follow the signals detected live</span>
+            </div>
+
           </div>
         </div>
       </div>
@@ -247,6 +319,6 @@
     </div>
   </footer>
 
-  <script src="assets/site.js?v=20260928" defer></script>
+  <script src="assets/site.js?v=20260929" defer></script>
 </body>
 </html>

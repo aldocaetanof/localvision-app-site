@@ -775,6 +775,8 @@ summary::marker { color: var(--accent); }
 .foot { background: rgba(5,13,23,.4); }
 @keyframes scan { 0%, 15% { transform: translateX(-75%); } 52%, 100% { transform: translateX(145%); } }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; scroll-behavior: auto !important; transition-duration: .01ms !important; } }
+/* EN: título quebra em mais linhas; sem isso o card centralizado desce em relação ao texto */
+@media (min-width: 1025px) { html[lang="en"] .hero-card { align-self: start; margin-top: 66px; } }
 @media (max-width: 1024px) {
   .hero { min-height: 0; grid-template-columns: 1fr; gap: 40px; padding-top: 60px; }
   .hero-card { max-width: 760px; width: 100%; margin: 0 auto; transform: none; }
