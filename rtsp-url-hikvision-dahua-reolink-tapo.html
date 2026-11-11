@@ -1,0 +1,246 @@
+<!doctype html>
+<!-- Local Vision — English guide (content/SEO page), published to localvision.app. -->
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>RTSP URL for Hikvision, Dahua, Reolink and Tapo | Local Vision</title>
+  <meta name="description" content="The RTSP stream URL formats for Hikvision, Dahua, Amcrest, Reolink and TP-Link Tapo cameras and NVR channels, plus how to fix a camera that won&#x27;t connect." />
+  <meta name="theme-color" content="#08101d" />
+  <meta property="og:title" content="RTSP URLs for Hikvision, Dahua, Amcrest, Reolink and Tapo cameras" />
+  <meta property="og:description" content="The RTSP stream URL formats for Hikvision, Dahua, Amcrest, Reolink and TP-Link Tapo cameras and NVR channels, plus how to fix a camera that won&#x27;t connect." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://localvision.app/rtsp-url-hikvision-dahua-reolink-tapo.html" />
+  <meta property="og:site_name" content="Local Vision" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:image" content="https://localvision.app/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="canonical" href="https://localvision.app/rtsp-url-hikvision-dahua-reolink-tapo.html" />
+  <link rel="alternate" hreflang="en" href="https://localvision.app/rtsp-url-hikvision-dahua-reolink-tapo.html" />
+  <link rel="alternate" hreflang="pt-BR" href="https://localvision.com.br/cameras-tapo-intelbras-hikvision.html" />
+  <link rel="alternate" hreflang="x-default" href="https://localvision.app/rtsp-url-hikvision-dahua-reolink-tapo.html" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://static.cloudflareinsights.com; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src https://cloudflareinsights.com; form-action 'none'; object-src 'none'; base-uri 'self'" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png?v=20260927-lens" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png?v=20260927-lens" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/site.css?v=20261111" />
+  <script src="assets/theme.js?v=20261027"></script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "RTSP URLs for Hikvision, Dahua, Amcrest, Reolink and Tapo cameras",
+      "description": "The RTSP stream URL formats for Hikvision, Dahua, Amcrest, Reolink and TP-Link Tapo cameras and NVR channels, plus how to fix a camera that won't connect.",
+      "inLanguage": "en",
+      "mainEntityOfPage": "https://localvision.app/rtsp-url-hikvision-dahua-reolink-tapo.html",
+      "image": "https://localvision.app/assets/og-image.png",
+      "datePublished": "2026-11-11",
+      "dateModified": "2026-11-11",
+      "author": {
+        "@type": "Organization",
+        "name": "Local Vision",
+        "url": "https://localvision.app/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Local Vision",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://localvision.app/assets/logo-owl-refined.png"
+        }
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://localvision.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "RTSP URLs for Hikvision, Dahua, Amcrest, Reolink and Tapo cameras",
+          "item": "https://localvision.app/rtsp-url-hikvision-dahua-reolink-tapo.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the default RTSP port?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "554. Some cameras let you change it in their network settings; if so, use the new port in the URL."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between the main stream and the sub stream?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The main stream has the full resolution for recording and viewing. The sub stream is a lower-resolution copy that uses less bandwidth and CPU, which is useful for live views on slower machines."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do Ring, Arlo or Nest cameras support RTSP?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most of their models do not expose a local RTSP stream, so they can't be used with local NVR or AI software. Check your model's specifications for RTSP or ONVIF support."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can Local Vision use these URLs?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Pick the manufacturer and the app builds the URL, or paste any RTSP URL using the advanced option when adding the camera."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "2425f0a6b76047ed88d276895d621326"}'></script>
+</head>
+<body>
+  <a class="skip" href="#content">Skip to content</a>
+
+  <header class="top">
+    <div class="wrap top-inner">
+      <a class="brand" href="./" aria-label="Local Vision — home">
+        <img class="brand-mark" src="assets/logo-owl-refined.png?v=20260927-lens" width="36" height="36" alt="" />
+        <span class="brand-text">Local Vision<small>Smart monitoring</small></span>
+      </a>
+      <div class="top-actions legal-actions">
+        <a class="btn btn-primary" href="./#signup">Try it free</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="content" class="wrap legal">
+    <nav class="breadcrumb" aria-label="You are here" style="font-size:13px;color:var(--text-tertiary);margin-bottom:12px"><a href="./">Home</a> › <span>RTSP URLs for Hikvision, Dahua, Amcrest, Reolink and Tapo cameras</span></nav>
+    <p class="kicker">Guide</p>
+    <h1>RTSP URLs for Hikvision, Dahua, Amcrest, Reolink and Tapo cameras</h1>
+    <p class="legal-lede">RTSP is the camera's video address on your home network. Any NVR or AI software, Local Vision included, reads the image through it without going through the manufacturer's cloud. Here are the URL formats for the most common brands, plus NVR channels and troubleshooting.</p>
+
+    <nav class="legal-toc" aria-label="On this page">
+      <a href="#format">The RTSP URL format</a>
+      <a href="#hikvision">Hikvision</a>
+      <a href="#dahua">Dahua and Amcrest</a>
+      <a href="#reolink">Reolink</a>
+      <a href="#tapo">TP-Link Tapo</a>
+      <a href="#nvr">NVR and DVR channels</a>
+      <a href="#trouble">Won&#x27;t connect?</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+
+    <section id="format">
+      <h2>The RTSP URL format</h2>
+      <p><code>rtsp://username:password@CAMERA-IP:554/path</code></p>
+      <p>Port 554 is the default. The path changes by brand. Most cameras offer a <strong>main stream</strong> (full resolution) and a <strong>sub stream</strong> (lower resolution, lighter to process). In Local Vision you usually don't type the URL: pick the manufacturer, or leave it on automatic and the app tries the known paths. For any other brand, use the advanced option and paste the full URL.</p>
+    </section>
+
+    <section id="hikvision">
+      <h2>Hikvision (and HiLook)</h2>
+      <ul>
+        <li>Main: <code>rtsp://admin:password@IP:554/Streaming/Channels/101</code></li>
+        <li>Sub: <code>rtsp://admin:password@IP:554/Streaming/Channels/102</code></li>
+      </ul>
+      <p>RTSP is enabled by default on most models. The password is the one set when the camera was activated.</p>
+    </section>
+
+    <section id="dahua">
+      <h2>Dahua and Amcrest</h2>
+      <ul>
+        <li>Main: <code>rtsp://admin:password@IP:554/cam/realmonitor?channel=1&amp;subtype=0</code></li>
+        <li>Sub: <code>rtsp://admin:password@IP:554/cam/realmonitor?channel=1&amp;subtype=1</code></li>
+      </ul>
+      <p>Many brands built on Dahua hardware, Amcrest included, use the same format.</p>
+    </section>
+
+    <section id="reolink">
+      <h2>Reolink</h2>
+      <ul>
+        <li>Main: <code>rtsp://admin:password@IP:554/h264Preview_01_main</code></li>
+        <li>Sub: <code>rtsp://admin:password@IP:554/h264Preview_01_sub</code></li>
+      </ul>
+      <p>On some models RTSP must be enabled first in the Reolink app or web interface, under network or advanced port settings. Battery-powered and some Wi-Fi-only Reolink models do not offer RTSP. In Local Vision, paste the URL using the advanced option.</p>
+    </section>
+
+    <section id="tapo">
+      <h2>TP-Link Tapo (C200, C210, C310, C500 and others)</h2>
+      <p>Tapo RTSP only works after you create a <strong>camera account</strong>, which is different from your TP-Link login: in the Tapo app, open the camera settings, go to advanced settings and then camera account, and create a username and password.</p>
+      <ul>
+        <li>High quality: <code>rtsp://username:password@IP:554/stream1</code></li>
+        <li>Low quality: <code>rtsp://username:password@IP:554/stream2</code></li>
+      </ul>
+      <p>Menu names may vary slightly between Tapo app versions.</p>
+    </section>
+
+    <section id="nvr">
+      <h2>NVR and DVR channels</h2>
+      <p>For cameras plugged into a recorder, use the recorder's IP and change the channel:</p>
+      <ul>
+        <li><strong>Dahua and Amcrest:</strong> <code>channel=2</code> for camera 2, <code>channel=3</code> for camera 3, and so on.</li>
+        <li><strong>Hikvision:</strong> <code>201</code> for camera 2 main stream, <code>301</code> for camera 3; a final digit of 2 means the sub stream.</li>
+        <li><strong>Reolink NVR:</strong> <code>h264Preview_02_main</code> for channel 2, and so on.</li>
+      </ul>
+    </section>
+
+    <section id="trouble">
+      <h2>Won't connect?</h2>
+      <ul>
+        <li><strong>Test in VLC first:</strong> Media › Open Network Stream, paste the URL. If VLC can't play it, the URL or credentials are wrong.</li>
+        <li><strong>Special characters in the password</strong> such as <code>@</code>, <code>#</code> or <code>:</code> break the URL. Use a password without them, or URL-encode them.</li>
+        <li><strong>Check the IP</strong> in your router's device list; a DHCP reservation keeps it from changing.</li>
+        <li><strong>Cloud-only cameras</strong> (many Ring, Arlo, Nest and Wyze models) don't expose RTSP at all.</li>
+      </ul>
+    </section>
+
+    <section id="faq">
+      <h2>FAQ</h2>
+      <h3>What is the default RTSP port?</h3>
+      <p>554. Some cameras let you change it in their network settings; if so, use the new port in the URL.</p>
+      <h3>What is the difference between the main stream and the sub stream?</h3>
+      <p>The main stream has the full resolution for recording and viewing. The sub stream is a lower-resolution copy that uses less bandwidth and CPU, which is useful for live views on slower machines.</p>
+      <h3>Do Ring, Arlo or Nest cameras support RTSP?</h3>
+      <p>Most of their models do not expose a local RTSP stream, so they can&#x27;t be used with local NVR or AI software. Check your model&#x27;s specifications for RTSP or ONVIF support.</p>
+      <h3>Can Local Vision use these URLs?</h3>
+      <p>Yes. Pick the manufacturer and the app builds the URL, or paste any RTSP URL using the advanced option when adding the camera.</p>
+    </section>
+
+    <section class="cta-box" style="margin-top:48px">
+      <h2 style="margin-top:0">Try it free for 14 days</h2>
+      <p>Get the Windows installer by email right away. No card required. The app interface is currently in Portuguese; email us for help in English.</p>
+      <p><a class="btn btn-primary btn-lg" href="./#signup">Start the free trial</a></p>
+    </section>
+
+    <section class="related" aria-labelledby="more-guides">
+      <h2 id="more-guides">More guides</h2>
+      <nav class="legal-toc"><a href="ai-person-detection-ip-camera.html">Person detection for IP cameras</a><a href="ip-camera-telegram-alerts.html">Telegram alerts with a photo</a><a href="frigate-blue-iris-alternative.html">Frigate and Blue Iris alternative</a></nav>
+    </section>
+
+    <p><small>Local Vision is an additional layer of security and does not replace monitored alarms, professional security or emergency services. AI detection can make mistakes and alerts can fail (power, internet, camera or computer). See the <a href="terms.html">terms of service</a>.</small></p>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap foot-inner">
+      <div><strong>Local Vision</strong></div>
+      <nav aria-label="Footer"><a href="./">Home</a><a href="privacy.html">Privacy policy</a><a href="terms.html">Terms of service</a><a href="refund.html">Refund policy</a><a href="mailto:aldo.caetano@localvision.com.br">aldo.caetano@localvision.com.br</a></nav>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,228 @@
+<!doctype html>
+<!-- Local Vision — English guide (content/SEO page), published to localvision.app. -->
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>IP camera alerts on Telegram with a photo | Local Vision</title>
+  <meta name="description" content="Step-by-step: create a Telegram bot, get your chat ID and receive a snapshot on your phone when a person enters a zone on any RTSP camera." />
+  <meta name="theme-color" content="#08101d" />
+  <meta property="og:title" content="How to get IP camera alerts on Telegram, with a photo" />
+  <meta property="og:description" content="Step-by-step: create a Telegram bot, get your chat ID and receive a snapshot on your phone when a person enters a zone on any RTSP camera." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://localvision.app/ip-camera-telegram-alerts.html" />
+  <meta property="og:site_name" content="Local Vision" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:image" content="https://localvision.app/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="canonical" href="https://localvision.app/ip-camera-telegram-alerts.html" />
+  <link rel="alternate" hreflang="en" href="https://localvision.app/ip-camera-telegram-alerts.html" />
+  <link rel="alternate" hreflang="pt-BR" href="https://localvision.com.br/alerta-camera-telegram.html" />
+  <link rel="alternate" hreflang="x-default" href="https://localvision.app/ip-camera-telegram-alerts.html" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://static.cloudflareinsights.com; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src https://cloudflareinsights.com; form-action 'none'; object-src 'none'; base-uri 'self'" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png?v=20260927-lens" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png?v=20260927-lens" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/site.css?v=20261111" />
+  <script src="assets/theme.js?v=20261027"></script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "How to get IP camera alerts on Telegram, with a photo",
+      "description": "Step-by-step: create a Telegram bot, get your chat ID and receive a snapshot on your phone when a person enters a zone on any RTSP camera.",
+      "inLanguage": "en",
+      "mainEntityOfPage": "https://localvision.app/ip-camera-telegram-alerts.html",
+      "image": "https://localvision.app/assets/og-image.png",
+      "datePublished": "2026-11-11",
+      "dateModified": "2026-11-11",
+      "author": {
+        "@type": "Organization",
+        "name": "Local Vision",
+        "url": "https://localvision.app/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Local Vision",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://localvision.app/assets/logo-owl-refined.png"
+        }
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://localvision.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "How to get IP camera alerts on Telegram, with a photo",
+          "item": "https://localvision.app/ip-camera-telegram-alerts.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Does my camera video go to Telegram?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Detection runs on your computer and only the alert photo and text are sent to Telegram. Continuous video and recordings stay on the machine."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does it work with Hikvision, Dahua, Reolink or Tapo cameras?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, if the camera has RTSP, which covers most IP models from these brands. On Tapo, create the camera account in the Tapo app first to enable RTSP."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I pay per camera?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. The subscription is per installation, with as many cameras as your computer can handle."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens if the internet goes down?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Detection and recording keep running on the computer. Telegram alerts need internet to be delivered."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "2425f0a6b76047ed88d276895d621326"}'></script>
+</head>
+<body>
+  <a class="skip" href="#content">Skip to content</a>
+
+  <header class="top">
+    <div class="wrap top-inner">
+      <a class="brand" href="./" aria-label="Local Vision — home">
+        <img class="brand-mark" src="assets/logo-owl-refined.png?v=20260927-lens" width="36" height="36" alt="" />
+        <span class="brand-text">Local Vision<small>Smart monitoring</small></span>
+      </a>
+      <div class="top-actions legal-actions">
+        <a class="btn btn-primary" href="./#signup">Try it free</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="content" class="wrap legal">
+    <nav class="breadcrumb" aria-label="You are here" style="font-size:13px;color:var(--text-tertiary);margin-bottom:12px"><a href="./">Home</a> › <span>How to get IP camera alerts on Telegram, with a photo</span></nav>
+    <p class="kicker">Guide</p>
+    <h1>How to get IP camera alerts on Telegram, with a photo</h1>
+    <p class="legal-lede">Want your phone to buzz with a photo when someone walks up to the gate? Local Vision detects the person on your own PC and sends the snapshot to your Telegram through a bot that only you control. Setup takes about 10 minutes.</p>
+
+    <nav class="legal-toc" aria-label="On this page">
+      <a href="#need">What you need</a>
+      <a href="#bot">1. Create the bot</a>
+      <a href="#chatid">2. Get the chat ID</a>
+      <a href="#test">3. Send a test</a>
+      <a href="#cameras">4. Turn on alerts per camera</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+
+    <section id="need">
+      <h2>What you need</h2>
+      <ul>
+        <li>A Windows 10 or 11 (64-bit) PC that stays on where the cameras are. No GPU required.</li>
+        <li>IP cameras with RTSP or USB webcams (<a href="rtsp-url-hikvision-dahua-reolink-tapo.html">RTSP URLs by brand</a>).</li>
+        <li>Telegram on your phone.</li>
+        <li>Local Vision installed. The trial is free for 14 days, no card required.</li>
+      </ul>
+    </section>
+
+    <section id="bot">
+      <h2>1. Create the bot with BotFather</h2>
+      <ol>
+        <li>In Telegram, search for <strong>@BotFather</strong> (the official one has the blue check) and open the chat.</li>
+        <li>Send <code>/newbot</code>.</li>
+        <li>Pick a name, such as “Home Cameras”, and a username ending in <code>bot</code>, such as <code>home_cameras_bot</code>.</li>
+        <li>BotFather replies with a <strong>token</strong> that looks like <code>123456789:AAH...</code>. Copy it.</li>
+      </ol>
+      <p>Keep the token private: anyone who has it can send messages through your bot.</p>
+    </section>
+
+    <section id="chatid">
+      <h2>2. Get the chat ID</h2>
+      <ol>
+        <li>Open a chat with your new bot and send any message, like “hi”.</li>
+        <li>In Local Vision, open the credentials screen and paste the token into the bot token field.</li>
+        <li>Click the button to <strong>detect the chat ID automatically</strong>. The destination chat ID is filled in.</li>
+        <li>Save.</li>
+      </ol>
+      <p>Want alerts in a family group? Add the bot to the group, send a message there and detect the chat ID again.</p>
+    </section>
+
+    <section id="test">
+      <h2>3. Send a test</h2>
+      <p>On the same screen, send a test message. It should reach your phone within seconds. If it doesn't, check the PC's internet connection and make sure you messaged the bot before detecting the chat ID.</p>
+    </section>
+
+    <section id="cameras">
+      <h2>4. Turn on alerts per camera</h2>
+      <ul>
+        <li>Enable Telegram alerts on each camera that deserves them. The alert carries the event photo and a short message.</li>
+        <li>Draw a <a href="ai-person-detection-ip-camera.html">zone</a> over the gate, fence or pool so passers-by on the street don't trigger alerts.</li>
+        <li>Register household faces to tell family from strangers.</li>
+        <li>Set the repeat interval so one person standing in frame doesn't flood the chat.</li>
+      </ul>
+    </section>
+
+    <section id="faq">
+      <h2>FAQ</h2>
+      <h3>Does my camera video go to Telegram?</h3>
+      <p>No. Detection runs on your computer and only the alert photo and text are sent to Telegram. Continuous video and recordings stay on the machine.</p>
+      <h3>Does it work with Hikvision, Dahua, Reolink or Tapo cameras?</h3>
+      <p>Yes, if the camera has RTSP, which covers most IP models from these brands. On Tapo, create the camera account in the Tapo app first to enable RTSP.</p>
+      <h3>Do I pay per camera?</h3>
+      <p>No. The subscription is per installation, with as many cameras as your computer can handle.</p>
+      <h3>What happens if the internet goes down?</h3>
+      <p>Detection and recording keep running on the computer. Telegram alerts need internet to be delivered.</p>
+    </section>
+
+    <section class="cta-box" style="margin-top:48px">
+      <h2 style="margin-top:0">Try it free for 14 days</h2>
+      <p>Get the Windows installer by email right away. No card required. The app interface is currently in Portuguese; email us for help in English.</p>
+      <p><a class="btn btn-primary btn-lg" href="./#signup">Start the free trial</a></p>
+    </section>
+
+    <section class="related" aria-labelledby="more-guides">
+      <h2 id="more-guides">More guides</h2>
+      <nav class="legal-toc"><a href="ai-person-detection-ip-camera.html">Person detection for IP cameras</a><a href="rtsp-url-hikvision-dahua-reolink-tapo.html">RTSP URLs by brand</a><a href="frigate-blue-iris-alternative.html">Frigate and Blue Iris alternative</a></nav>
+    </section>
+
+    <p><small>Local Vision is an additional layer of security and does not replace monitored alarms, professional security or emergency services. AI detection can make mistakes and alerts can fail (power, internet, camera or computer). See the <a href="terms.html">terms of service</a>.</small></p>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap foot-inner">
+      <div><strong>Local Vision</strong></div>
+      <nav aria-label="Footer"><a href="./">Home</a><a href="privacy.html">Privacy policy</a><a href="terms.html">Terms of service</a><a href="refund.html">Refund policy</a><a href="mailto:aldo.caetano@localvision.com.br">aldo.caetano@localvision.com.br</a></nav>
+    </div>
+  </footer>
+</body>
+</html>

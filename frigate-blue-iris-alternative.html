@@ -1,0 +1,231 @@
+<!doctype html>
+<!-- Local Vision — English guide (content/SEO page), published to localvision.app. -->
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Frigate and Blue Iris alternative for Windows | Local Vision</title>
+  <meta name="description" content="How Local Vision compares with Frigate and Blue Iris for local AI camera monitoring: setup, hardware, face recognition, plates, alerts and pricing." />
+  <meta name="theme-color" content="#08101d" />
+  <meta property="og:title" content="A simpler Frigate and Blue Iris alternative for Windows" />
+  <meta property="og:description" content="How Local Vision compares with Frigate and Blue Iris for local AI camera monitoring: setup, hardware, face recognition, plates, alerts and pricing." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://localvision.app/frigate-blue-iris-alternative.html" />
+  <meta property="og:site_name" content="Local Vision" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:image" content="https://localvision.app/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="canonical" href="https://localvision.app/frigate-blue-iris-alternative.html" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://static.cloudflareinsights.com; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src https://cloudflareinsights.com; form-action 'none'; object-src 'none'; base-uri 'self'" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png?v=20260927-lens" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png?v=20260927-lens" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/site.css?v=20261111" />
+  <script src="assets/theme.js?v=20261027"></script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "A simpler Frigate and Blue Iris alternative for Windows",
+      "description": "How Local Vision compares with Frigate and Blue Iris for local AI camera monitoring: setup, hardware, face recognition, plates, alerts and pricing.",
+      "inLanguage": "en",
+      "mainEntityOfPage": "https://localvision.app/frigate-blue-iris-alternative.html",
+      "image": "https://localvision.app/assets/og-image.png",
+      "datePublished": "2026-11-11",
+      "dateModified": "2026-11-11",
+      "author": {
+        "@type": "Organization",
+        "name": "Local Vision",
+        "url": "https://localvision.app/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Local Vision",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://localvision.app/assets/logo-owl-refined.png"
+        }
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://localvision.app/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "A simpler Frigate and Blue Iris alternative for Windows",
+          "item": "https://localvision.app/frigate-blue-iris-alternative.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is Local Vision free like Frigate?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Local Vision is a paid subscription at US$ 29 per month per installation, with a 14-day free trial and no per-camera fees. Frigate is free and open source."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need Docker or Linux?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Local Vision is a regular Windows 10 or 11 (64-bit) app with an installer."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need a GPU or a Coral accelerator?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Detection runs on the CPU. Performance depends on your processor, the resolution and the number of cameras."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I keep my Blue Iris or Frigate setup?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Cameras usually accept several RTSP connections, so you can try Local Vision on the same cameras without removing your current NVR, as long as the camera supports the extra stream."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "2425f0a6b76047ed88d276895d621326"}'></script>
+</head>
+<body>
+  <a class="skip" href="#content">Skip to content</a>
+
+  <header class="top">
+    <div class="wrap top-inner">
+      <a class="brand" href="./" aria-label="Local Vision — home">
+        <img class="brand-mark" src="assets/logo-owl-refined.png?v=20260927-lens" width="36" height="36" alt="" />
+        <span class="brand-text">Local Vision<small>Smart monitoring</small></span>
+      </a>
+      <div class="top-actions legal-actions">
+        <a class="btn btn-primary" href="./#signup">Try it free</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="content" class="wrap legal">
+    <nav class="breadcrumb" aria-label="You are here" style="font-size:13px;color:var(--text-tertiary);margin-bottom:12px"><a href="./">Home</a> › <span>A simpler Frigate and Blue Iris alternative for Windows</span></nav>
+    <p class="kicker">Guide</p>
+    <h1>A simpler Frigate and Blue Iris alternative for Windows</h1>
+    <p class="legal-lede">Frigate and Blue Iris are great tools, and a lot of people run them happily. Local Vision is for people who want local AI person detection, face recognition and plate reading on a regular Windows PC, set up from a graphical app, without Docker, YAML files or a separate AI add-on. Here's an honest comparison.</p>
+
+    <nav class="legal-toc" aria-label="On this page">
+      <a href="#summary">Short version</a>
+      <a href="#table">Side by side</a>
+      <a href="#frigate">When Frigate is the better choice</a>
+      <a href="#blueiris">When Blue Iris is the better choice</a>
+      <a href="#lv">When Local Vision fits</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+
+    <section id="summary">
+      <h2>Short version</h2>
+      <ul>
+        <li><strong>Frigate:</strong> open source NVR with excellent object detection, typically run in Docker and configured in YAML, often alongside Home Assistant.</li>
+        <li><strong>Blue Iris:</strong> mature Windows NVR software with deep recording controls; AI detection usually comes from a separate add-on.</li>
+        <li><strong>Local Vision:</strong> a Windows app with AI built in (people, faces, plates and zones), set up through a graphical interface, with a monthly subscription per installation.</li>
+      </ul>
+    </section>
+
+    <section id="table">
+      <h2>Side by side</h2>
+      <div class="table-wrap"><table>
+        <thead><tr><th scope="col"></th><th scope="col">Local Vision</th><th scope="col">Frigate</th><th scope="col">Blue Iris</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Platform</th><td>Windows 10/11 app</td><td>Docker (Linux is the usual host)</td><td>Windows</td></tr>
+          <tr><th scope="row">Setup</th><td>Graphical, in the app</td><td>YAML configuration</td><td>Graphical</td></tr>
+          <tr><th scope="row">Person detection</th><td>Built in, on the CPU</td><td>Built in; an accelerator is recommended</td><td>Through an AI add-on</td></tr>
+          <tr><th scope="row">Face recognition</th><td>Built in</td><td>Available in recent versions</td><td>Through add-ons</td></tr>
+          <tr><th scope="row">License plate reading</th><td>Built in</td><td>Available in recent versions</td><td>Through add-ons</td></tr>
+          <tr><th scope="row">Price</th><td>US$ 29/month per installation</td><td>Free and open source</td><td>Paid license</td></tr>
+          <tr><th scope="row">Support</th><td>Direct by email</td><td>Community</td><td>Vendor and community</td></tr>
+        </tbody>
+      </table></div>
+      <p><small>Third-party features change often. This table reflects our understanding at the time of writing; check each project's documentation before deciding. Frigate and Blue Iris are trademarks of their respective owners.</small></p>
+    </section>
+
+    <section id="frigate">
+      <h2>When Frigate is the better choice</h2>
+      <ul>
+        <li>You already run Home Assistant or a home server with Docker.</li>
+        <li>You're comfortable editing configuration files.</li>
+        <li>You want free, open source software and community support.</li>
+      </ul>
+    </section>
+
+    <section id="blueiris">
+      <h2>When Blue Iris is the better choice</h2>
+      <ul>
+        <li>You need advanced recording, PTZ and many-camera controls.</li>
+        <li>You prefer a one-time license and don't mind configuring an AI add-on.</li>
+      </ul>
+    </section>
+
+    <section id="lv">
+      <h2>When Local Vision fits</h2>
+      <ul>
+        <li>You want <a href="ai-person-detection-ip-camera.html">AI person detection</a>, face recognition and plate reading working together out of the box.</li>
+        <li>You have a regular Windows PC and no GPU or accelerator.</li>
+        <li>You install cameras for clients and want an admin panel plus a read-only view for residents.</li>
+        <li>You want <a href="ip-camera-telegram-alerts.html">photo alerts on Telegram</a> without writing automations.</li>
+      </ul>
+    </section>
+
+    <section id="faq">
+      <h2>FAQ</h2>
+      <h3>Is Local Vision free like Frigate?</h3>
+      <p>No. Local Vision is a paid subscription at US$ 29 per month per installation, with a 14-day free trial and no per-camera fees. Frigate is free and open source.</p>
+      <h3>Do I need Docker or Linux?</h3>
+      <p>No. Local Vision is a regular Windows 10 or 11 (64-bit) app with an installer.</p>
+      <h3>Do I need a GPU or a Coral accelerator?</h3>
+      <p>No. Detection runs on the CPU. Performance depends on your processor, the resolution and the number of cameras.</p>
+      <h3>Can I keep my Blue Iris or Frigate setup?</h3>
+      <p>Yes. Cameras usually accept several RTSP connections, so you can try Local Vision on the same cameras without removing your current NVR, as long as the camera supports the extra stream.</p>
+    </section>
+
+    <section class="cta-box" style="margin-top:48px">
+      <h2 style="margin-top:0">Try it free for 14 days</h2>
+      <p>Get the Windows installer by email right away. No card required. The app interface is currently in Portuguese; email us for help in English.</p>
+      <p><a class="btn btn-primary btn-lg" href="./#signup">Start the free trial</a></p>
+    </section>
+
+    <section class="related" aria-labelledby="more-guides">
+      <h2 id="more-guides">More guides</h2>
+      <nav class="legal-toc"><a href="ai-person-detection-ip-camera.html">Person detection for IP cameras</a><a href="ip-camera-telegram-alerts.html">Telegram alerts with a photo</a><a href="rtsp-url-hikvision-dahua-reolink-tapo.html">RTSP URLs by brand</a></nav>
+    </section>
+
+    <p><small>Local Vision is an additional layer of security and does not replace monitored alarms, professional security or emergency services. AI detection can make mistakes and alerts can fail (power, internet, camera or computer). See the <a href="terms.html">terms of service</a>.</small></p>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap foot-inner">
+      <div><strong>Local Vision</strong></div>
+      <nav aria-label="Footer"><a href="./">Home</a><a href="privacy.html">Privacy policy</a><a href="terms.html">Terms of service</a><a href="refund.html">Refund policy</a><a href="mailto:aldo.caetano@localvision.com.br">aldo.caetano@localvision.com.br</a></nav>
+    </div>
+  </footer>
+</body>
+</html>

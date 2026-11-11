@@ -1,0 +1,32 @@
+# Local Vision
+
+> Local Vision is Windows software that adds AI to the security cameras you already own: person detection, face recognition, license plate reading, drawable restricted zones and photo alerts on your phone. The AI runs on your own computer (CPU, no GPU) and video stays at home. One subscription per installation, no per-camera fees.
+
+Key facts:
+
+- Platform: Windows 10 or 11 (64-bit). No GPU required. The PC (or a mini PC) stays on where the cameras are.
+- Cameras: any IP camera with RTSP (Hikvision, Dahua, Amcrest, Reolink, TP-Link Tapo and others), NVR/DVR channels, and USB webcams.
+- Features: person and dog detection (YOLO), polygon zones, local face recognition, license plate reading with searchable history, a Watchful Agent for risk signals (hidden face, suspicious approach), continuous recording with retention controls, event history with photos, Telegram alerts with a photo, admin and read-only resident roles.
+- Privacy: continuous video, recordings and the face database stay on the machine. Data only leaves when the user enables an integration such as Telegram.
+- Price: US$ 29/month per installation, as many cameras as the computer can handle, cancel anytime. 14-day free trial, no card. Checkout by Paddle (Merchant of Record).
+- Language: the app interface is currently in Portuguese; English support by email.
+- Limits: not a monitored alarm (no 24/7 human monitoring, siren or door sensors). AI detection can make mistakes and alerts depend on power, internet and the computer being on.
+
+## Guides
+
+- [AI person detection for IP cameras](https://localvision.app/ai-person-detection-ip-camera.html): why motion detection fails, zones and known faces
+- [IP camera alerts on Telegram](https://localvision.app/ip-camera-telegram-alerts.html): create the bot, get the chat ID, enable per camera
+- [RTSP URLs by brand](https://localvision.app/rtsp-url-hikvision-dahua-reolink-tapo.html): Hikvision, Dahua, Amcrest, Reolink, Tapo, NVR channels and troubleshooting
+- [Frigate and Blue Iris alternative](https://localvision.app/frigate-blue-iris-alternative.html): honest comparison of local AI NVR options on Windows
+
+## Product
+
+- [Home and pricing](https://localvision.app/): features, pricing, FAQ and free trial sign-up
+- [Terms of service](https://localvision.app/terms.html)
+- [Privacy policy](https://localvision.app/privacy.html)
+- [Refund policy](https://localvision.app/refund.html)
+
+## Optional
+
+- [Versão em português](https://localvision.com.br/llms.txt): Brazilian site, prices in BRL
+- Contact: aldo.caetano@localvision.com.br
