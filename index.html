@@ -35,13 +35,14 @@
     "description": "Multi-camera AI monitoring on your own computer: person detection, face recognition, license plate reading, restricted zones and optional Telegram alerts."
   }
   </script>
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://static.cloudflareinsights.com; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; media-src 'self' https: data:; connect-src https://cloudflareinsights.com; form-action 'self' https://szsdhiimvrjerkvtqwzw.supabase.co; object-src 'none'; base-uri 'self'" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://static.cloudflareinsights.com https://challenges.cloudflare.com; frame-src https://challenges.cloudflare.com; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; media-src 'self' https: data:; connect-src https://cloudflareinsights.com; form-action 'self' https://szsdhiimvrjerkvtqwzw.supabase.co; object-src 'none'; base-uri 'self'" />
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png?v=20260927-lens" />
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png?v=20260927-lens" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/site.css?v=20260929b" />
+  <link rel="stylesheet" href="assets/site.css?v=20261027" />
+  <script src="assets/theme.js?v=20261027"></script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Do I need a GPU or fast internet?", "acceptedAnswer": {"@type": "Answer", "text": "No. Detection runs on the CPU. Performance depends on your computer, resolution and number of cameras. Internet is needed only for integrations you enable, the subscription and remote access."}}, {"@type": "Question", "name": "Do my images go to external services?", "acceptedAnswer": {"@type": "Answer", "text": "Continuous video, recordings and the face database stay on your machine. If you enable Telegram, alert photos are sent to it."}}, {"@type": "Question", "name": "Will it work with my current cameras?", "acceptedAnswer": {"@type": "Answer", "text": "If they speak RTSP (most IP cameras, including Hikvision, Dahua, Reolink, Amcrest and TP-Link Tapo) or are USB webcams, yes."}}, {"@type": "Question", "name": "Do I pay per camera?", "acceptedAnswer": {"@type": "Answer", "text": "No. The subscription is US$ 29/month per installation, with as many cameras as your computer can handle."}}, {"@type": "Question", "name": "Who processes my payment?", "acceptedAnswer": {"@type": "Answer", "text": "Our order process is conducted by our online reseller Paddle.com. Paddle.com is the Merchant of Record for all our orders and handles billing, taxes, invoices and payment support."}}, {"@type": "Question", "name": "Can I cancel or get a refund?", "acceptedAnswer": {"@type": "Answer", "text": "You can cancel anytime; access continues until the end of the paid period. See the refund policy."}}, {"@type": "Question", "name": "Windows blocked the installer (SmartScreen)?", "acceptedAnswer": {"@type": "Answer", "text": "The installer isn't code-signed yet. On the SmartScreen screen, click “More info” and then “Run anyway”. You can verify the file's SHA256 from the download email."}}]}</script>
   <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "2425f0a6b76047ed88d276895d621326"}'></script>
 </head>
@@ -272,7 +273,7 @@
           <p>Your email and answers are only used to check compatibility and contact you about the trial. No card, camera password, address or images are requested.</p>
           <p><strong>No video is sent through this form.</strong></p>
         </div>
-        <form class="signup-form" id="trialForm" method="post" action="https://szsdhiimvrjerkvtqwzw.supabase.co/functions/v1/relay/trial-interest" accept-charset="UTF-8">
+        <form class="signup-form" id="trialForm" data-turnstile-sitekey="0x4AAAAAAF8SWBgkpJ56iAJg" method="post" action="https://szsdhiimvrjerkvtqwzw.supabase.co/functions/v1/relay/trial-interest" accept-charset="UTF-8">
           <input type="hidden" name="lang" value="en" />
           <label class="field"><span>Name <small>(optional)</small></span><input name="name" autocomplete="name" maxlength="120" /></label>
           <label class="field"><span>Email</span><input type="email" name="email" autocomplete="email" maxlength="254" required /></label>
@@ -319,6 +320,6 @@
     </div>
   </footer>
 
-  <script src="assets/site.js?v=20260929" defer></script>
+  <script src="assets/site.js?v=20261111" defer></script>
 </body>
 </html>
